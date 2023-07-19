@@ -133,6 +133,9 @@ public:
    */
   double distance_to_point(const Point &p)
   {
+    // Formula from: 
+    // https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line#Line_defined_by_two_points
+    // Twice the area of the triangle defined by p, p1, and p2:
     double numerator = std::abs((p2.x - p1.x) * (p1.y - p.y) - (p1.x - p.x) * (p2.y - p1.y));
     return (numerator / this->length());
   }
